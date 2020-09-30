@@ -13,7 +13,6 @@ import static org.junit.Assert.*;
 
 public class MoodAnalyzerTest {
 	@Test
-<<<<<<< HEAD
 	public void TestMood() {
 		MoodAnalyzer moodAnalyzer = new MoodAnalyzer(null);
 		try {
@@ -21,30 +20,5 @@ public class MoodAnalyzerTest {
 		} catch (MoodAnalyzerException e) {
 			Assert.assertEquals(MoodAnalyzerException.ExceptionType.ENTERED_NULL, e.type);
 		}
-=======
-	public void givenMessage_WhenSad_ShouldReturnSad() {
-		MoodAnalyzer moodAnalyzer = new MoodAnalyzer("I am in a sad mood");
-		String mood = moodAnalyzer.analyseMood();
-		Assert.assertEquals("SAD", mood);
-	}
-
-	@Test
-	public void givenMessage_WhenHappy_ShouldReturnHappy() {
-		MoodAnalyzer moodAnalyzer = new MoodAnalyzer("I am in a mood");
-		String mood = moodAnalyzer.analyseMood();
-		Assert.assertEquals("HAPPY", mood);
-	}
-
-	@Test
-	public void givenMessageBlank_WhenSad_ShouldReturnSad() {
-		MoodAnalyzer moodAnalyzer = new MoodAnalyzer();
-		String mood = moodAnalyzer.analyseMood();
-		Assert.assertEquals("SAD", mood);
-	}
-	public void givenMessage_WhenNull_ShouldReturnHappy() {
-		MoodAnalyzer moodAnalyzer = new MoodAnalyzer();
-		String mood = moodAnalyzer.analyseMood(null);
-		Assert.assertEquals("HAPPY", mood);
->>>>>>> 88442baff76617563915d12f31a9da3382caeda1
 	}
 }

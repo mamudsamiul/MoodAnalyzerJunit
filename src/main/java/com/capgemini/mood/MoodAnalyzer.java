@@ -24,16 +24,10 @@ public class MoodAnalyzer {
 
 			if (message.contains("Happy"))
 				return "HAPPY";
-<<<<<<< HEAD
 			else
 				return "SAD";
 		} catch (NullPointerException e) {
 			throw new MoodAnalyzerException(MoodAnalyzerException.ExceptionType.ENTERED_NULL, "Enter a Proper Message");
-=======
-		} catch (Exception e) {
-			System.out.println("Exception thrown");
-			return "HAPPY";
->>>>>>> 88442baff76617563915d12f31a9da3382caeda1
 		}
 	}
 }
