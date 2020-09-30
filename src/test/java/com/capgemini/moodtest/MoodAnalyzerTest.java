@@ -34,6 +34,6 @@ public class MoodAnalyzerTest {
 	public void givenMessage_WhenNull_ShouldReturnHappy() {
 		MoodAnalyzer moodAnalyzer = new MoodAnalyzer();
 		String mood = moodAnalyzer.analyseMood(null);
-		Assert.assertEquals(null, mood);
+		Assert.assertEquals("HAPPY", mood);
 	}
 }
