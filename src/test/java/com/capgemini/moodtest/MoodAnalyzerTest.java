@@ -4,8 +4,6 @@
 package com.capgemini.moodtest;
 
 import org.junit.Test;
-
-import com.capgemini.mood.Library;
 import com.capgemini.mood.MoodAnalyzer;
 
 import junit.framework.Assert;
@@ -32,5 +30,10 @@ public class MoodAnalyzerTest {
 		MoodAnalyzer moodAnalyzer = new MoodAnalyzer();
 		String mood = moodAnalyzer.analyseMood();
 		Assert.assertEquals("SAD", mood);
+	}
+	public void givenMessage_WhenNull_ShouldReturnHappy() {
+		MoodAnalyzer moodAnalyzer = new MoodAnalyzer();
+		String mood = moodAnalyzer.analyseMood(null);
+		Assert.assertEquals(null, mood);
 	}
 }
