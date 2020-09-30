@@ -4,28 +4,30 @@ public class MoodAnalyzer {
 	private String message;
 
 	public MoodAnalyzer() {
-		message="sad";
 	}
 
 	public MoodAnalyzer(String message) {
 		this.message = message;
 	}
 
-	public String analyseMood() {
-		if (message.contains("sad"))
-			return "SAD";
-		else
-			return "HAPPY";
+	public String analyseMood(String message) throws MoodAnalyzerException {
+
+		this.message = message;
+		return analyseMood();
 	}
-	public String analyseMood(String message) {
+
+	public String analyseMood() throws MoodAnalyzerException {
 		try {
-			if (message.contains("sad"))
-				return "SAD";
-			else
+			if (message.length() == 0)
+				throw new MoodAnalyzerException(MoodAnalyzerException.ExceptionType.ENTERED_EMPTY,
+						"Please Enter Some Message");
+
+			if (message.contains("Happy"))
 				return "HAPPY";
-		} catch (Exception e) {
-			System.out.println("Exception thrown");
-			return null;
+			else
+				return "SAD";
+		} catch (NullPointerException e) {
+			throw new MoodAnalyzerException(MoodAnalyzerException.ExceptionType.ENTERED_NULL, "Enter a Proper Message");
 		}
 	}
 }
