@@ -15,15 +15,15 @@ import static org.junit.Assert.*;
 public class MoodAnalyzerTest {
 	@Test
 	public void givenMessage_WhenSad_ShouldReturnSad() {
-		MoodAnalyzer moodAnalyzer = new MoodAnalyzer();
-		String mood = moodAnalyzer.analyseMood("I am in a sad mood");
+		MoodAnalyzer moodAnalyzer = new MoodAnalyzer("I am in a sad mood");
+		String mood = moodAnalyzer.analyseMood();
 		Assert.assertEquals("SAD", mood);
 	}
 
 	@Test
 	public void givenMessage_WhenHappy_ShouldReturnHappy() {
-		MoodAnalyzer moodAnalyzer = new MoodAnalyzer();
-		String mood = moodAnalyzer.analyseMood("I am in a mood");
+		MoodAnalyzer moodAnalyzer = new MoodAnalyzer("I am in a mood");
+		String mood = moodAnalyzer.analyseMood();
 		Assert.assertEquals("HAPPY", mood);
 	}
 }
